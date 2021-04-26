@@ -23,7 +23,25 @@
 // -109 <= target <= 109
 // Only one valid answer exists.
 
+function twoSum( array, target){
+    const numsReached = {}; //hash table will look like this { 2: 0 ,7:, 1}
+    const res = []; //returning the array and filling it up
+    for(let i = 0; i < array.length; i++){
+        const num = array[i]; //current iterated number
+        const comp= target - num; // iterating over the number
 
+        if(numsReached[comp] != undefined){
+            res.push(i);
+            res.push(numsReached[comp]);
+        } // undefined is considered because js considers 0 as a number
+        numsReached[num] = i;
+    
+    }
+    return res;
+
+}
+
+console.log(twoSum([3,2,4], 6));
 
 
 
