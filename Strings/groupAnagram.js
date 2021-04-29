@@ -54,10 +54,7 @@ function groupAnagrams(strings){
         } else{
             anagrams[wordsSorted]= [string]; //create new group of words if we are seeing the new anagram
         }
-    }
-    
-    
-    
+    } 
     return Object.values(anagrams); //this would be the new list from the hash table
 }
 
