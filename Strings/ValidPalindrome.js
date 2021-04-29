@@ -14,13 +14,13 @@
 
 function isPalindrome(string) {
     //Cleaning input string
-    string = string.toLowerCase().replace(/[\w_]/g, " "); //allowing to grab all items and replacing them with an empty string
+    string = string.toLowerCase().replace(/[\W_]/g, ""); //allowing to grab all items and replacing them with an empty string
     let left = 0;
     let right = string.length - 1;
 
-    while(left < right) {
-        if(string[left] !== string[right]){
-            return false;
+    while (left < right) {
+        if (string[left] !== string[right]) {
+            return false;   
         }
         left++;
         right--;
@@ -32,7 +32,7 @@ function isPalindrome(string) {
 console.log(isPalindrome("A man, a plan, a canal: Panama"));
 
 // function isPalindrome(s) {
-//     s = s.toLowerCase().replace(/[\w_]/g, "");
+//     s = s.toLowerCase().replace(/[\W_]/g, "");
 //     let left = 0;
 //     let right = s.length - 1;
 //     while (left < right) {
