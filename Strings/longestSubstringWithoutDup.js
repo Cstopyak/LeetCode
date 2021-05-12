@@ -22,26 +22,47 @@
 // s consists of English letters, digits, symbols and spaces.
 
 
-function LongestSubstringWithoutRep(string){
-    let charsHashMap= {}; //contains all char in input string and earliest they can be found
+// function LongestSubstringWithoutRep(string){
+//     let charsHashMap= {}; //contains all char in input string and earliest they can be found
+//     let startIdx= 0;
+//     let maxLen= 0; //function gonna be able to return and be able to update within the for loop
+
+//     for( let i = 0; i < string.length; i++){ //iterating through input string
+//         const endChar = string[i];
+//         //check to see if it has not been found within our sliding idx
+//         if(charsHashMap[endChar] >= startIdx){
+//             startIdx = charsHashMap[endChar] + 1 //moving one above idx
+//         }
+
+//         charsHashMap[endChar] = i;// allows to update while incrasing idx && would update new position for dupes
+//         maxLen = Math.max(maxLen, i - startIdx +1); //updating max len and our sliding idx
+
+//     }
+//     return maxLen;
+// }
+
+// console.log(LongestSubstringWithoutRep("abcabcbb"));
+// console.log(LongestSubstringWithoutRep("bbbbb"));
+// console.log(LongestSubstringWithoutRep("pwwkew"));
+// console.log(LongestSubstringWithoutRep("abc"));
+
+//actual string
+function LongestSubstringWithoutRep2(string){
+    const hashMap= {};
+    let maxLen = [0,1];
     let startIdx= 0;
-    let maxLen= 0; //function gonna be able to return and be able to update within the for loop
 
-    for( let i = 0; i < string.length; i++){ //iterating through input string
-        const endChar = string[i];
-        //check to see if it has not been found within our sliding idx
-        if(charsHashMap[endChar] >= startIdx){
-            startIdx = charsHashMap[endChar] + 1 //moving one above idx
+    for( let i = 0; i < string.length; i ++){
+        const char = string[i];
+        if( char in hashMap){
+            startIdx = Math.max(startIdx, hashMap[char] + 1)
         }
-
-        charsHashMap[endChar] = i;// allows to update while incrasing idx && would update new position for dupes
-        maxLen = Math.max(maxLen, i - startIdx +1); //updating max len and our sliding idx
-
+        if(maxLen[1] - maxLen[0] < i + 1 - startIdx){
+            maxLen = [startIdx, i + 1];
+        }
+        hashMap[char] = i;
     }
-    return maxLen;
-}
+    return string.slice(maxLen[0], maxLen[1]);
+};
 
-console.log(LongestSubstringWithoutRep("abcabcbb"));
-console.log(LongestSubstringWithoutRep("bbbbb"));
-console.log(LongestSubstringWithoutRep("pwwkew"));
-console.log(LongestSubstringWithoutRep("abc"));
+console.log(LongestSubstringWithoutRep2("abcabcbb"));
