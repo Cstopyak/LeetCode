@@ -57,7 +57,8 @@ const threeSum = nums => {
 };
 
 //option 2 not fixed runs infin loop
-function threeSum(array, targetSum) {
+function threeNumberSum(array, targetSum) {
+    // Write your code here.
     array.sort((a, b) => a - b);
     let triples = []; //new array for target value
 
@@ -66,11 +67,9 @@ function threeSum(array, targetSum) {
         let right = array.length - 1;
 
         while (left < right) {
-
             const currSum = array[i] + array[left] + array[right];
-
             if (currSum === targetSum) {
-                triples.push([array[i], array[left] + array[right]]);
+                triples.push([array[i], array[left], array[right]]);
                 left++;
                 right--;
             } else if (currSum < targetSum) {
@@ -79,9 +78,11 @@ function threeSum(array, targetSum) {
                 right--;
             }
         }
+
     }
     return triples;
-};
 
-console.log(threeSum([-1, 0, 1, 2, -1, -4], [-1, -1, 2], [-1, 0, 1]));
+}
+
+console.log(threeNumberSum([-1, 0, 1, 2, -1, -4], [-1, -1, 2], [-1, 0, 1]));
 
