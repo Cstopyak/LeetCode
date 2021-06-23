@@ -22,3 +22,25 @@
 
 // given X 1 -> 1-> 3-> 4-> 4-> 5-> 6-> 6
 
+class LinkedList{
+    constructor(value){
+        this.value = value;
+        this.next = null;
+    }
+}
+
+function removeDupsLL(linkedList){
+    currentNode = linkedList;
+    while(currentNode !== null){
+        let distNode = currentNode.next;
+        while(distNode !== null && distNode.value === currentNode.value){
+            distNode = distNode.next;
+        }
+        currentNode.next = distNode;
+        currentNode = distNode
+
+    }
+
+
+    return linkedList;
+}
