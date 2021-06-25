@@ -10,7 +10,7 @@
 // since we need a new array we will have to set this up
 
 array = [5, 1, 4, 2]
-
+// [1, 2, 3, 4]
 
 // function arrayofProds(array){
 //     const prods= [];
