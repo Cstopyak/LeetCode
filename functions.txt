@@ -1,0 +1,25 @@
+functions
+definition: groups a block of statements
+can accept values and return values
+
+
+function funcName() {
+    ...
+}
+
+parameters 
+definition: are values that you can pass to a function
+can be any data type
+
+function funName(param1, param2){
+    ...
+}
+
+return
+defintiion: results back to code calling the function
+It is at the last line or code within the block
+
+variable scope:
+
+definition: declared within a function using var do not exist outside of the function
+if you declare a variable without using the var keyword, then var will be available outside of the function

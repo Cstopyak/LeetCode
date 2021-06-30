@@ -1,0 +1,27 @@
+ For-Loop
+ definition: is a block of code that is instructed to repeat a specific number of times
+ Use the for keyword to specify a for-Loop
+ for(intializer; condition; increment){
+
+ }
+
+ ex. for( let i = 0; i < array.length; i ++){
+
+ }
+
+ while-Loop
+ defintion: is a block of code that is instrucred to repeat until a condition is no longer true
+
+ use the while keyword to specifiy
+
+ while(condition){
+     ....
+ }
+
+ ex. while( i < 10){
+     if ( i == 5) {
+         i++;
+         break; //this will go all the way up to 4
+     }
+ }
+
