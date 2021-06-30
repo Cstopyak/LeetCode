@@ -14,17 +14,17 @@ array = [2, 1, 5, 2, 3, 3, 4]
 
 function firstDupVal(array) {
     let seenIndex = array.length;
-    for( let i = 0; i < array.length; i++){
+    for (let i = 0; i < array.length; i++) {
         const value = array[i];
-        for( let j = i + 1; j < array.length; j++){
-             const valueComp = array[j]; 
-             if( value === valueComp) {
-                 seenIndex = Math.min(seenIndex, j);
-             }
+        for (let j = i + 1; j < array.length; j++) {
+            const valueComp = array[j];
+            if (value === valueComp) {
+                seenIndex = Math.min(seenIndex, j);
+            }
         }
     }
-		
-		if ( seenIndex === array.length) return -1;
+
+    if (seenIndex === array.length) return -1;
 
     return array[seenIndex];
 }
