@@ -1,0 +1,63 @@
+Conditional statements
+is used to control the execuation flow of a program
+
+
+if-statements
+if this then do something
+if(condition){
+    excute whatever is int his block of code as long as it is true
+}
+
+conditional operators
+
+== equal
+!= not equal
+>
+>= returns true if eleft side is greater than or equal to the right side
+<
+<= returns true if the left side is less than or equal to left side
+
+ex
+
+var a = 5;
+if ( a >4){
+    console.log("the number is greater than 4);
+}
+
+this means its true
+
+=== is to compare the value and datatype of two operands
+
+******
+
+else statement
+used in conjunction with the if statement to execute to code in the opposite condition
+if(condition){
+    .....
+} else{
+    ......
+}
+
+if ( a >4){
+    console.log("the number is greater than 4);
+} else {
+    console.log("the opposite case ran");
+}
+
+else if
+used in conjunction with the if-statement toe xecute code based on another condition
+if(condition){
+    ...
+} else if{
+    ...
+}
+
+if ( a >4){
+    console.log("the number is greater than 4);
+} else if ( a % 2 == 0){
+    alert("else/if has run!")
+} 
+else {
+    console.log("the opposite case ran");
+}
+
