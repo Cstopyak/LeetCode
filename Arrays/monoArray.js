@@ -17,7 +17,7 @@
 //how can we compare each index? by declaring and checking the array[0] to array[1]
 //and so on and so fourth
 
-array = [-1, -5, -10, -1100, -10101, -1102]
+array = [-1, -5, -10, -1100, -1101, -1102, -9001]
 
 function monotonic(array) {
     if (array.length <= 2) return true;
@@ -37,23 +37,25 @@ function monotonic(array) {
 }
 
 
-function breakingDirection(arrayDirection, prevInt, currInt){ //helper function prevInt is array[i -1]
+function breakingDirection(arrayDirection, prevInt, currInt) { //helper function prevInt is array[i -1]
     const difference = currInt - prevInt; //difference between the current and prevInt
     if (arrayDirection > 0) return difference < 0;
     return difference > 0;
 }
-console.log(monotonic(array));
+// console.log(monotonic(array));
 
 console.log(array);
 
-function isMono(array){
+function isMono(array) {
     //doing two checks if increasing and if decreasing
     let nonDecrease = true;
     let nonIncrease = true;
-    for ( let i = 1; i < array.length; i ++){
-        
+    for (let i = 1; i < array.length; i++) {
+        if (array[i] < array[i - 1]) nonDecrease = false; //smaller at prev index then is false
+        if (array[i] > array[i - 1]) nonIncrease = false; //samethign here but greater than
     }
+    return nonDecrease || nonIncrease;
 }
-
+console.log(isMono(array));
 
 
