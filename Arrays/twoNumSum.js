@@ -69,7 +69,7 @@ function twoNumberSum(arr, targetSum) {
 function sumofArr(arr){
     let sum = 0;
     for( let i = 0; i < arr.length; i++){
-        sum = sum + sum[i];
+        sum = sum + arr[i];
     }
     
     
